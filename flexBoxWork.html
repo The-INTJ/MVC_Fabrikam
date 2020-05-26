@@ -1,0 +1,84 @@
+<style>
+    @media(min-width:468px) {
+
+        .container-1 {
+            display: flex;
+            /*
+            align-items:flex-start;
+            align-items:flex-end;
+            align-items:center;
+
+            flex-direction:column;
+        */
+        }
+
+        .container-2 {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .container-1 div, .container-2 div{
+        border: 1px #ccc solid;
+        padding: 10px
+    }
+
+    .box-1{
+        flex:1;
+        order:2;
+    }
+
+    .box-2 {
+        flex: 2;
+        order:1;
+    }
+
+    .box-3 {
+        flex: 1;
+        order:3;
+    }
+
+    .box-4 {
+        flex-basis: 20%;
+    }
+
+</style>
+
+
+<div class="container-1">
+    <div class="box-1">
+        <h3>Box One</h3>
+        <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div class="box-2">
+        <h3>Box Two</h3>
+        <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div class="box-3">
+        <h3>Box Three</h3>
+        <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+
+</div>
+
+<div class="container-2">
+    <div class="box-4">
+        <h3>Box 4</h3>
+        <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div class="box-4">
+        <h3>Box 5</h3>
+        <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div class="box-4">
+        <h3>Box 6</h3>
+        <p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+
+</div>
