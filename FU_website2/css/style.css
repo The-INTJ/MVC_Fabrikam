@@ -1,0 +1,119 @@
+body{
+    font: 15px/1.5 Times New Roman;
+    padding: 0;
+    margin: 0;
+    background-color: silver;
+}
+
+/* global */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header lul {
+    margin:0;
+    padding:0;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th{
+    text-align:center;
+}
+tr{
+    text-align:center;
+}
+tr:nth-child(even) {
+    background-color:white;
+}
+tr:nth-child(odd) {
+    background-color:#989898;
+}
+
+/* Header */
+header {
+    background: #870e11;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #000000 3px solid;
+}
+
+header a{
+    color: #907b07;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header li {
+    float:left;
+    display:inline;
+    padding: 0 20px 0 20px;
+}
+
+header #name {
+    float:left;
+}
+
+header #name h1 {
+    margin: 0;
+}
+
+header nav {
+    float:right;
+
+}
+
+header a:hover{
+    color:azure;
+    font-weight:bold;
+}
+
+/* Showcase */
+
+#classes{
+    min-height: 400px;
+    background-color:black;
+    text-align:center;
+    color:#000000;
+}
+
+/* Boxes */
+
+#colleges{
+    margin-top:20px;
+}
+
+#colleges .box{
+    float:left;
+    width:20%;
+    padding:10px;
+    text-align:center;
+}
+#colleges .box img{
+    width:180px;
+}
+
+footer{
+    padding:20px;
+    margin-top:20px;
+    color:#ffffff;
+    background-color:#870e11;
+    text-align:center;
+}
+
+aside#sidebar{
+    float:right;
+    width:30%;
+    margin-top:10px;
+
+}
+
+article#main-col{
+    float:left;
+    width:65%;
+}
