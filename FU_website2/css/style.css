@@ -74,29 +74,17 @@ header nav {
 }
 
 /* Colleges*/
-
 .container-colleges {
-    display:flex;
-    flex-direction:row;
-    border: 5px #ccc solid;
-    padding: 50px
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
 }
 
 .college-1 {
-    flex-basis:40%;
+    flex:1;
+    padding:10px;
 }
 
-.college-2 {
-
-}
-
-.college-3 {
-
-}
-
-.college-4 {
-
-}
 
 footer {
     padding: 20px;
