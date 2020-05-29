@@ -2,26 +2,12 @@ body{
     font: 15px/1.5 Times New Roman;
     padding: 0;
     margin: 0;
-    background-color: silver;
+    background-color: black;
 }
 
 /* -- GLOBAL -- */
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-table {
-    border-collapse: collapse;
-    width: 100%;
-    align-content:center;
-}
-th{
-    align-content:center;
-    text-align:center;
-}
-tr{
-    text-align:center;
+p{
+    color:silver;
 }
 tr:nth-child(even) {
     background-color:white;
@@ -38,6 +24,49 @@ a {
 a:hover {
     color: azure;
     font-weight: bold;
+}
+
+/*-- Containers --*/
+.header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    padding: 10px;
+    flex-basis: 100%;
+}
+.container {
+    display:flex;
+    flex-direction:row;
+    padding:10px;
+    flex-basis:100%;
+}
+.container-1 {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex-basis: 100%;
+}
+#classes {
+    display:flex;
+    flex-direction:row;
+    min-height: 400px;
+    background-color: silver;
+    text-align: center;
+    color: #000000;
+}
+.container-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis:100%;
+}
+
+.box-1 {
+    flex: 1;
+    flex-direction:column;
+    align-content:center;
+    padding: 10px;
+    
 }
 
     /*-- SPECIFIC --*/
@@ -66,24 +95,7 @@ header #name h1 {
 header nav {
     float:right;
 }
-#classes{
-    min-height: 400px;
-    background-color:black;
-    text-align:center;
-    color:#000000;
-}
 
-/* Colleges*/
-.container-colleges {
-    display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-}
-
-.college-1 {
-    flex:1;
-    padding:10px;
-}
 
 
 footer {
