@@ -64,8 +64,7 @@ a:hover {
 .box-1 {
     flex: 1;
     flex-direction:column;
-    align-content:center;
-    padding: 10px;
+    justify-content:center;
     
 }
 
@@ -116,4 +115,12 @@ aside#sidebar{
 article#main-col{
     float:left;
     width:65%;
+}
+
+/*
+    JQuery styles
+*/
+
+.boldNshadow {
+    font-weight:100;
 }
