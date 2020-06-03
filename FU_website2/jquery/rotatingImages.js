@@ -2,6 +2,7 @@
 
 // Global vars
 var imgLoc = 0;
+setRadioButton(imgLoc);
 var imgs = ["images/Fab_logo.png", "images/FU_image.png", "images/picture.png", "images/school.jpg"]
 var imgSrc;
 
@@ -59,8 +60,13 @@ function setRadioButton(loc) {
 $("div.imgrot >> input").on("click", function () {
     var prevLoc = imgLoc;
     imgLoc = $(this).val(); // Radio button number
+    console.log(imgLoc);
 
-    $("<img src=" + imgs[imgLoc] + " /> ").apendTo("div.img-cont");
+    $("<img src=" + imgs[imgLoc] + " /> ").append("div.img-cont");
+
+    $("img").animate({
+        right: 350
+    });
 
 
 

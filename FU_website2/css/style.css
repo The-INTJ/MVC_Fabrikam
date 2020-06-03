@@ -147,7 +147,7 @@ article#main-col{
 }
 
 #current {
-
+    position:relative;
 }
 
 #append {
