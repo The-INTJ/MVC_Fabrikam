@@ -124,3 +124,10 @@ article#main-col{
 .boldNshadow {
     font-weight:100;
 }
+
+.imgrot {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex-basis: 100%;
+}
