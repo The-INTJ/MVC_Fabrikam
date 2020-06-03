@@ -25,6 +25,9 @@ a:hover {
     color: azure;
     font-weight: bold;
 }
+h1 {
+    color:red;
+}
 
 /*-- Containers --*/
 .header {
@@ -121,13 +124,22 @@ article#main-col{
     JQuery styles
 */
 
-.boldNshadow {
-    font-weight:100;
-}
 
 .imgrot {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     padding: 10px;
     flex-basis: 100%;
 }
+
+.img-cont {
+    overflow: hidden;
+    position:relative;
+    flex-direction:row;
+}
+
+.imgrot img {
+    position:relative;
+}
+
