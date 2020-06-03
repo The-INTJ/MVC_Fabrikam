@@ -25,9 +25,6 @@ a:hover {
     color: azure;
     font-weight: bold;
 }
-h1 {
-    color:red;
-}
 
 /*-- Containers --*/
 .header {
@@ -124,32 +121,37 @@ article#main-col{
     JQuery styles
 */
 
-
 .imgrot {
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    flex-basis: 100%;
-}
-
-.img-cont {
-    overflow: hidden;
-    position:relative;
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
 }
 
-.imgrot img {
-    position:relative;
-    width:100%;
-    height:150px;
+
+#jquery-slideshow-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 300px;
 }
 
-#current {
-    position:relative;
+#jquery-slideshow-container #jquery-slideshow {
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
-#append {
-
+#jquery-slideshow-container #jquery-slideshow li {
+    display: inline;
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

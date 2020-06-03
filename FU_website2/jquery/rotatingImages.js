@@ -11,14 +11,14 @@ var rotating = true;
 //setInterval(rotate, 1000); // every 4 seconds
 
 // Select image on radio button functionality
-/*
+
 $("div.imgrot >> input").on("click", function () {
     stopRotating();
     imgLoc = $(this).val(); // Radio button number
     setImage(imgLoc);
     setTimeout(keepRotating, 3000); // Resumes rotation after 3 seconds
 });
-*/
+
 
 // Animation functionality
 /*
