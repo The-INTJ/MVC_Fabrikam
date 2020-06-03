@@ -1,6 +1,7 @@
 jQuery(function ($) {
 
     var imgLoc = 0;
+    setRadioButton(imgLoc);
 
     var slider = $("#jquery-slideshow"), // cache the slider object for later use
         item_width = slider.parent().outerWidth(); // get the width of the container for later use
@@ -10,31 +11,40 @@ jQuery(function ($) {
     //adjust();
 
     // We have more than one slide,
-    // let's add the pagination buttons
     if (slider.children("li").length > 1) {
-
-        // Add previous/next buttons
-        //slider.parent().append("<a href=\"#\" id=\"btn-prev\"><i class=\"fa fa-angle-left\"></i><span>Previous</span></a><a href=\"#\" id=\"btn-next\"><i class=\"fa fa-angle-right\"></i><span>Next</span></a>");
 
         $("div.imgrot >> input").on("click", function () {
             var prevLoc = imgLoc;
             imgLoc = $(this).val(); // Radio button number
 
-            //slider.children$("ul#jquery-slideshow").get(imgLoc);
-
-            if (prevLoc < imgLoc) {
-                slider.children("li").get(imgLoc).prependTo(slider);
+            const forward = () => {
+                slider.children().next().prependTo(slider);
                 slider.css("left", -item_width);
                 slider.animate({
                     left: 0
                 }, 300, "swing");
-            } else {
+            }
+
+            const backward = () => {
                 slider.animate({
                     left: -item_width
                 }, 300, "swing", function () {
-                    slider.children("li").get(imgLoc).appendTo(slider);
+                    slider.children().prev().appendTo(slider);
                     slider.css("left", 0);
                 });
+            }
+
+            if (prevLoc < imgLoc) {
+                while(prevLoc != imgLoc) {
+                    forward();
+                    prevLoc++;
+                }
+
+            } else {
+                while (prevLoc > imgLoc) {
+                    backward();
+                    prevLoc--;
+                }
             }
         });
 
@@ -69,6 +79,10 @@ jQuery(function ($) {
     function adjust() {
         item_width = slider.parent().outerWidth();
         slider.children("li").width(item_width).parent().width(item_width * slider.children("li").length);
+    }
+
+    function setRadioButton(loc) {
+        $('input:radio[name=place]')[loc].checked = true;
     }
 
 });

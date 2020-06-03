@@ -155,3 +155,6 @@ article#main-col{
     background-repeat: no-repeat;
     background-size: cover;
 }
+    #jquery-slideshow-container #jquery-slideshow span {
+        color:red;
+    }
