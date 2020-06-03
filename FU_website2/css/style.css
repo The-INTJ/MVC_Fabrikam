@@ -136,10 +136,13 @@ article#main-col{
 .img-cont {
     overflow: hidden;
     position:relative;
+    display:flex;
     flex-direction:row;
 }
 
 .imgrot img {
     position:relative;
+    width:300px;
+    height:150px;
 }
 

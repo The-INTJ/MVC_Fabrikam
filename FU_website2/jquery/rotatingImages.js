@@ -2,7 +2,7 @@
 
 // Global vars
 var imgLoc = 0;
-var imgs = ["images/Fab_logo.png", "images/FU_image.png", "images/picture.png", "images/Fab_logo.png"]
+var imgs = ["images/Fab_logo.png", "images/FU_image.png", "images/picture.png", "images/school.png"]
 var imgSrc;
 
 // Set the images to rotate
