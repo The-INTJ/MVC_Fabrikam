@@ -23,7 +23,7 @@ jQuery(function ($) {
             //slider.children$("ul#jquery-slideshow").get(imgLoc);
 
             if (prevLoc < imgLoc) {
-                slider.children("li:last").prependTo(slider);
+                slider.children("li").get(imgLoc).prependTo(slider);
                 slider.css("left", -item_width);
                 slider.animate({
                     left: 0
@@ -32,13 +32,14 @@ jQuery(function ($) {
                 slider.animate({
                     left: -item_width
                 }, 300, "swing", function () {
-                    slider.children("li:first").appendTo(slider);
+                    slider.children("li").get(imgLoc).appendTo(slider);
                     slider.css("left", 0);
                 });
             }
         });
 
         // Handle clicks on the next button
+        /*
         $("div.imgrot >> input").on("click", "a#btn-prev", function (e) {
             e.preventDefault();
 
@@ -61,6 +62,7 @@ jQuery(function ($) {
                 slider.css("left", 0);
             });
         });
+        */
     }
 
     // Helpers
