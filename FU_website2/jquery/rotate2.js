@@ -12,25 +12,36 @@ function rotate(num) {
     if (slider.children("li").length > 1) {
 
 
-        const forward = () => {
+        const forward = (prev, curr) => {
             tracker = (tracker + 1) % 4;
-            slider.children().next().prependTo(slider);
-            slider.css("left", -item_width);
+
             slider.animate({
-                left: 0
-            }, 300, "swing");
+                
+                left: -item_width
+            }, 3000, "swing", function () {
+                    while (prev < curr) {
+                        slider.children().next().prependTo(slider);
+                        prev++;
+                    }
+                    //slider.children("li:first").prependTo(slider);
+                    slider.css("left", 0);
+            });
         }
 
         //setInterval(forward, 1000);
 
-        const backward = () => {
+        const backward = (prev, curr) => {
             tracker = (tracker - 1) % 4;
-            slider.animate({
-                left: -item_width
-            }, 300, "swing", function () {
+            while (prev > curr) {
                 slider.children().prev().appendTo(slider);
-                slider.css("left", 0);
-            });
+                prev--;
+            }
+            
+            //slider.children("li:last").appendTo(slider);
+            slider.css("left", -item_width);
+            slider.animate({
+                left: 0
+            }, 3000, "swing");
         }
 
         $("div.imgrot >> input").on("click", function () {
@@ -39,16 +50,10 @@ function rotate(num) {
             imgLoc = $(this).val(); // Radio button number
 
             if (prevLoc < imgLoc) {
-                while (prevLoc != imgLoc) {
-                    forward();
-                    prevLoc++;
-                }
+                forward(prevLoc, imgLoc);
 
             } else {
-                while (prevLoc > imgLoc) {
-                    backward();
-                    prevLoc--;
-                }
+                backward(prevLoc, imgLoc);
             }
         });
 

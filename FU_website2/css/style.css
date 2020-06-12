@@ -140,7 +140,6 @@ article#main-col{
     top: 0;
     left: 0;
     margin: 0;
-    padding: 0;
     height: 100%;
 }
 
@@ -153,7 +152,6 @@ article#main-col{
     height: 100%;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    background-size: cover;
 }
     #jquery-slideshow-container #jquery-slideshow span {
         color:red;
