@@ -4,9 +4,9 @@
 
 
 
-<section id="classes">
+<section id="classes" class="form-control">
 
-        <div class="container-1">
+        <div class="container-1 form-group">
             <h4><u>Open Classes</u></h4>
             <table>
                 <thead>
@@ -47,7 +47,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="imgrot">
+        <div class="imgrot form-group">
 
             <div id="jquery-slideshow-container">
 
@@ -83,7 +83,7 @@
             </div>
         </div>
 
-        <div class="container-1">
+        <div class="container-1 form-group">
             <h4><u>Register For</u></h4>
             <div class="container-2">
 
@@ -104,21 +104,25 @@
         </div>
     </section>
 
-<div class="container-2">
-    <div class="box-1">
+<div class="container-2 form-control">
+    <div class="box-1 form-group">
         <img src="images/Fab_logo.png" />
         <h3><a href="colofcd.html">College of Computing and Digital Media</a></h3>
     </div>
-    <div class="box-1">
+    <div class="box-1 form-group">
         <img src="images/Fab_logo.png" />
         <h3><a href="colofed.html">College of Education</a></h3>
     </div>
-    <div class="box-1">
+    <div class="box-1 form-group">
         <img src="images/Fab_logo.png" />
         <h3><a href="coloflaw.html">College of Law</a></h3>
     </div>
-    <div class="box-1">
+    <div class="box-1 form-group">
         <img src="images/Fab_logo.png" />
         <h3><a href="schofmus.html">School of Music</a></h3>
     </div>
 </div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/custom")
+}

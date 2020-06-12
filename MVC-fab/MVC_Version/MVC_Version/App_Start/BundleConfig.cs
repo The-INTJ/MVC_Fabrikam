@@ -25,6 +25,10 @@ namespace MVC_Version
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            // Custom scripts
+            bundles.Add(new ScriptBundle("~/bundles/custom").Include(
+                "~/Scripts/custom/rotate2.js"));
         }
     }
 }
