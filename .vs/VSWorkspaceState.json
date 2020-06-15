@@ -2,11 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\FU_website2",
-    "\\FU_website2\\jquery",
+    "\\FU_website2\\css",
     "\\MVC-fab",
     "\\MVC-fab\\MVC_Version",
-    "\\MVC-fab\\MVC_Version\\MVC_Version"
+    "\\MVC-fab\\MVC_Version\\MVC_Version",
+    "\\MVC-fab\\MVC_Version\\MVC_Version\\App_Start",
+    "\\MVC-fab\\MVC_Version\\MVC_Version\\Content",
+    "\\MVC-fab\\MVC_Version\\MVC_Version\\Views",
+    "\\MVC-fab\\MVC_Version\\MVC_Version\\Views\\Home"
   ],
-  "SelectedNode": "\\MVC-fab\\MVC_Version\\MVC_Version\\App_Start",
+  "SelectedNode": "\\MVC-fab\\MVC_Version\\MVC_Version\\Content\\StyleSheet1.css",
   "PreviewInSolutionExplorer": false
 }
