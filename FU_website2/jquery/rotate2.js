@@ -15,9 +15,7 @@ function rotate(num) {
 
         const forward = (prev, curr) => {
             tracker = (tracker + 1) % 4;
-
             slider.animate({
-                
                 left: -item_width
             }, 3000, "swing", function () {
                     while (prev < curr) {
@@ -25,12 +23,9 @@ function rotate(num) {
                         prev++;
                         
                     }
-                    //slider.children("li:first").prependTo(slider);
                     slider.css("left", 0);
             });
         }
-
-
         const backward = (prev, curr) => {
             tracker = (tracker - 1) % 4;
             while (prev > curr) {
