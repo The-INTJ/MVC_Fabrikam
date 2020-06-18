@@ -1,47 +1,47 @@
-var currImg = 0;
-var prevImg = 0;
-setRadioButton(currImg);
+var nextImg = 0;
+var curImg = 0;
+setRadioButton(curImg);
 var timeoutInterval;
-var rotateInterval = setInterval(autoRotate, 3000);
+var intervalAR = setInterval(autoRotate, 3000);
 
 var slider = $("#jquery-slideshow");
 var item_width = slider.parent().outerWidth();
 
-$("div.imgrot >> input").on("click", function () {
+$("#radioButtons input").on("click", function () {
     clearTimeout(timeoutInterval);
-    clearInterval(rotateInterval); // Stop the current autoRotate
-    prevImg = currImg;
-    currImg = $(this).val();
+    clearInterval(intervalAR); // Stop the current autoRotate
+    curImg = nextImg; // next image will change, making it the next current
+    nextImg = $("#radioButtons input").val(); // grabbing the value of clicked radio button
 
-    if (prevImg < currImg) {
-        forward(prevImg, currImg);
-    } else if (prevImg > currImg) {
-        backward(prevImg, currImg);
+    if (curImg < nextImg) { // If we need to advance
+        forward(curImg, nextImg);
+    } else if (curImg > nextImg) { // If the user clicked a previous button
+        backward(curImg, nextImg);
     }
 
-    // Reset variable after 5 seconds
-    timeoutInterval = setTimeout(
-        rotateInterval = setInterval(autoRotate, 3000),
-        5000);
+    // call the autorotate after 2 seconds, setting the interval for 3 -- 5 seconds of stop
+    timeoutInterval = (
+        (intervalAR = setInterval(autoRotate, 3000)),
+        2000);
 
 });
 
-function forward(prev, curr) {
+function forward(current, next) {
     slider.animate({
             left: -item_width
         }, 300, "swing", function() {
-            while (prev < curr) {
+            while (current < next) { // loop enables image skipping
                 slider.children().next().prependTo(slider);
-                prev++;
+                current++;
             }
             slider.css("left", 0);
         });
 }
 
-function backward(prev, curr) {
-    while (prev > curr) {
+function backward(current, next) {
+    while (current > next) { // loop enables image skipping
         slider.children().prev().appendTo(slider);
-        prev--;
+        current--;
     }
     slider.css("left", -item_width);
     slider.animate({
@@ -56,8 +56,9 @@ function setRadioButton(loc) {
 //Interval Processing
 
 function autoRotate() {
-    var _prevImg = $("div.imgrot >> input").val();
-    var _currImg = (_prevImg + 1) % 4; // 4 images
-    setRadioButton(_currImg);
-    forward(_prevImg, _currImg);
+    curImg = $("#radioButtons input").val(); // is called at a random point, so check buttons
+    nextImg = (curImg + 1) % 4; // increment for advance, reset to 0 if at last image
+    setRadioButton(nextImg); // set the button
+    // Tertiary statement ensuring proper function call based on next required image
+    curImg < nextImg ? forward(curImg, nextImg) : backward(curImg, nextImg);
 }
