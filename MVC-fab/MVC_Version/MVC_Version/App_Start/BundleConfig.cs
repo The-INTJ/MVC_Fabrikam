@@ -24,7 +24,8 @@ namespace MVC_Version
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/StyleSheet1.css"));
 
             // Custom scripts
             bundles.Add(new ScriptBundle("~/bundles/custom").Include(
