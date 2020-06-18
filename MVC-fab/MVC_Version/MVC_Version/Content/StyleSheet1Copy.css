@@ -1,0 +1,30 @@
+﻿#classes {
+    display: flex;
+    flex-direction: row;
+    background-color: silver;
+    min-height: 100%;
+    text-align: center;
+    color: #000000;
+}
+
+.container-1 {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 3px;
+}
+
+.imgrot {
+    flex-grow: 1; /* grow with items in #classes*/
+    margin: 3px;
+}
+.container-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.box-1 {
+    margin: 3px;
+}
