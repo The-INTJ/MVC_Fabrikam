@@ -1,4 +1,4 @@
-﻿ -- GLOBAL -- 
+﻿/* -- GLOBAL -- */
 p {
     color: silver;
 }
@@ -23,7 +23,7 @@ a {
         font-weight: bold;
     }
 
--- Containers --
+/*-- Containers --*/
 .header {
     display: flex;
     flex-direction: row;
@@ -68,7 +68,7 @@ a {
     justify-content: center;
 }
 
--- SPECIFIC --
+/*-- SPECIFIC --*/
 header {
     background: #870e11;
     color: #ffffff;

@@ -29,7 +29,7 @@ namespace MVC_Version
 
             // Custom scripts
             bundles.Add(new ScriptBundle("~/bundles/custom").Include(
-                "~/Scripts/custom/rotate2.js"));
+                "~/Scripts/custom/rotate3.js"));
         }
     }
 }

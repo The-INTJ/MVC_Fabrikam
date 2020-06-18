@@ -18,6 +18,12 @@
     flex-grow: 1; /* grow with items in #classes*/
     margin: 3px;
 }
+
+#radioButtons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 .container-2 {
     display: flex;
     flex-direction: row;
@@ -26,5 +32,41 @@
 }
 
 .box-1 {
+    flex-grow: 1;
     margin: 3px;
+}
+
+aside#sidebar {
+    float: right;
+    width: 30%;
+    margin-top: 10px;
+}
+
+
+/*--------SLIDER CSS----------*/
+#jquery-slideshow-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+#jquery-slideshow-container #jquery-slideshow {
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 100%;
+}
+
+#jquery-slideshow-container #jquery-slideshow li {
+    display: inline;
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
 }
