@@ -9,7 +9,7 @@ namespace MVC_Version.Controllers
     public class BlogController : Controller
     {
         // GET: Blog
-        public ActionResult Index()
+        public ActionResult Login()
         {
             return View();
         }

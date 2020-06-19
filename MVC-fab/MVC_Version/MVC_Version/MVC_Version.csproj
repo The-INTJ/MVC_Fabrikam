@@ -135,6 +135,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\StyleSheet1Copy.css" />
     <Content Include="Content\StyleSheet1.css" />
+    <Content Include="Content\LoginStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -159,6 +160,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Views\Blog\Blog.cshtml" />
+    <Content Include="Views\Blog\Login.cshtml" />
     <None Include="Views\College\Colofcd.cshtml" />
     <None Include="Views\College\Colofed.cshtml" />
     <None Include="Views\College\Coloflaw.cshtml" />
