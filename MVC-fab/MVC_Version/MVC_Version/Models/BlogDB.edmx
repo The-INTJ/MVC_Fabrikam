@@ -43,6 +43,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="getPasswords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="getUsernames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="BlogModelStoreContainer">
           <EntitySet Name="authors" EntityType="Self.authors" Schema="dbo" store:Type="Tables" />
@@ -106,6 +107,7 @@
             <End Role="blogs" EntitySet="blogs" />
           </AssociationSet>
           <FunctionImport Name="getUsernames" ReturnType="Collection(String)" />
+          <FunctionImport Name="getPasswords" ReturnType="Collection(String)" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -141,6 +143,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="getUsernames" FunctionName="BlogModel.Store.getUsernames" />
+          <FunctionImportMapping FunctionImportName="getPasswords" FunctionName="BlogModel.Store.getPasswords" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

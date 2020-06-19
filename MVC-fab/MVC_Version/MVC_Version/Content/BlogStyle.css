@@ -1,0 +1,11 @@
+﻿.post {
+    display: flex;
+}
+
+.content {
+    flex-grow: 3;
+}
+
+.details {
+    flex-grow: 1;
+}

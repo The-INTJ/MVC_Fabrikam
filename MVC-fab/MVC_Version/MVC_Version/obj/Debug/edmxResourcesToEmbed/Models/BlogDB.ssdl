@@ -38,6 +38,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="getPasswords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="getUsernames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="BlogModelStoreContainer">
     <EntitySet Name="authors" EntityType="Self.authors" Schema="dbo" store:Type="Tables" />

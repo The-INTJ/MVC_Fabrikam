@@ -35,5 +35,10 @@ namespace MVC_Version.Models
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("getUsernames");
         }
+    
+        public virtual ObjectResult<string> getPasswords()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("getPasswords");
+        }
     }
 }

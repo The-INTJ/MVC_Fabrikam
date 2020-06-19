@@ -11,6 +11,12 @@ namespace MVC_Version.Controllers
     public class BlogController : Controller
     {
         // GET: Blog
+        public ActionResult Blog()
+        {
+            return View();
+        }
+
+
         public ActionResult Login(Data data)
         {
             return View(data);
@@ -18,14 +24,15 @@ namespace MVC_Version.Controllers
 
         public ActionResult TryLogin(Data data)
         {
-            Debug.WriteLine("Heyyyyy");
-            Debug.WriteLine(data.Username);
             var dbContext = new BlogDbContext();
             var usernames = new List<string>();
+            var passwords = new List<string>();
             usernames = dbContext.getUsernames().ToList();
-            if (usernames.Contains(data.Username))
+            passwords = dbContext.getPasswords().ToList();
+            Debug.WriteLine("Username: " + data.Username + " Password: " + data.Password);
+            if (usernames.Contains(data.Username) && passwords.Contains(data.Password))
             {
-                return View("~/Views/Home/Index.cshtml");
+                return View("Blog");
             }
             else
             {

@@ -49,5 +49,6 @@
       <End Role="blogs" EntitySet="blogs" />
     </AssociationSet>
     <FunctionImport Name="getUsernames" ReturnType="Collection(String)" />
+    <FunctionImport Name="getPasswords" ReturnType="Collection(String)" />
   </EntityContainer>
 </Schema>
