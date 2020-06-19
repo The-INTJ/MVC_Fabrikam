@@ -12,6 +12,8 @@ namespace MVC_Version.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class BlogDbContext : DbContext
     {
@@ -28,5 +30,10 @@ namespace MVC_Version.Models
         public virtual DbSet<author> authors { get; set; }
         public virtual DbSet<blog> blogs { get; set; }
         public virtual DbSet<login> logins { get; set; }
+    
+        public virtual ObjectResult<string> getUsernames()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("getUsernames");
+        }
     }
 }

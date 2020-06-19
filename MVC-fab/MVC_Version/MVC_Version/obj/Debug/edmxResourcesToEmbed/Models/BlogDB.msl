@@ -28,5 +28,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="getUsernames" FunctionName="BlogModel.Store.getUsernames" />
   </EntityContainerMapping>
 </Mapping>

@@ -155,6 +155,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BlogDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Data.cs" />
     <Compile Include="Models\login.cs">
       <DependentUpon>BlogDB.tt</DependentUpon>
     </Compile>
