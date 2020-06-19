@@ -15,7 +15,8 @@
 }
 
 .imgrot {
-    flex-grow: 1; /* grow with items in #classes*/
+    display: flex;
+    flex-direction: column;
     margin: 3px;
 }
 
@@ -36,6 +37,8 @@
     margin: 3px;
 }
 
+
+
 aside#sidebar {
     float: right;
     width: 30%;
@@ -55,13 +58,12 @@ aside#sidebar {
     overflow: hidden;
     position: relative;
     top: 0;
-    left: 0;
     margin: 0;
     height: 100%;
 }
 
 #jquery-slideshow-container #jquery-slideshow li {
-    display: inline;
+/*    display: inline;*/
     float: left;
     margin: 0;
     padding: 0;

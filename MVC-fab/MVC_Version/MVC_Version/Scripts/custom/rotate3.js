@@ -1,5 +1,3 @@
-
-
 var nextImg = 0;
 var curImg = 0;
 setRadioButton(curImg);
@@ -28,10 +26,7 @@ $("#radioButtons >> input").on("click", function () {
 
 });
 
-
-
-
-function forward2(current, next) {
+function forward(current, next) {
     slider.animate({
             left: -item_width
         }, 300, "swing", function() {
@@ -43,7 +38,7 @@ function forward2(current, next) {
         });
 }
 
-function backward2(current, next) {
+function backward(current, next) {
     while (current > next) { // loop enables image skipping
         slider.children().prev().appendTo(slider);
         current--;
@@ -66,39 +61,4 @@ function autoRotate() {
     setRadioButton(nextImg); // set the button
     // Tertiary statement ensuring proper function call based on next required image
     curImg < nextImg ? forward(curImg, nextImg) : backward(curImg, nextImg);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-function forward(current, next) {
-    slider.animate({
-        left: -item_width
-    }, 300, "swing", function () {
-        while (curImg < nextImg) { // loop enables image skipping
-            slider.children().next().prependTo(slider);
-            curImg++;
-        }
-        slider.css("left", 0);
-    });
-}
-
-function backward(current, next) {
-    while (curImg > nextImg) { // loop enables image skipping
-        slider.children().prev().appendTo(slider);
-        curImg--;
-    }
-    slider.css("left", -item_width);
-    slider.animate({
-        left: 0
-    }, 300, "swing");
 }

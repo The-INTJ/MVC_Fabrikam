@@ -6,24 +6,28 @@ using System.Web.Mvc;
 
 namespace MVC_Version.Controllers
 {
-    public class HomeController : Controller
+    public class CollegeController : Controller
     {
-        public ActionResult Index()
+        // GET: College
+        public ActionResult Colofcd()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Colofed()
         {
-
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Coloflaw()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
+
+        public ActionResult Schofmus()
+        {
+            return View();
+        }
+
     }
 }

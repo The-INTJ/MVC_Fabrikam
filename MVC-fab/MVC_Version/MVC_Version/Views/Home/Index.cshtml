@@ -77,9 +77,9 @@
         </div>
         <div id="radioButtons">
             <div class="box-1"><input type="radio" name="place" value="0"></div>
-            <div class="box-1"><input type="radio" name="place" value="0"></div>
-            <div class="box-1"><input type="radio" name="place" value="0"></div>
-            <div class="box-1"><input type="radio" name="place" value="0"></div>
+            <div class="box-1"><input type="radio" name="place" value="1"></div>
+            <div class="box-1"><input type="radio" name="place" value="2"></div>
+            <div class="box-1"><input type="radio" name="place" value="3"></div>
         </div>
     </div>
     <div class="container-1">
@@ -105,20 +105,23 @@
 
 <div class="container-2">
     <div class="box-1">
-        <img src="images/Fab_logo.png" />
-        <h3><a href="colofcd.html">College of Computing and Digital Media</a></h3>
+        <div class="box-2">
+            <img src="images/Fab_logo.png" />
+        </div>
+        
+        <h3>@Html.ActionLink("College of Computing and Digital Media", "Colofcd", "College")</h3>
     </div>
     <div class="box-1">
         <img src="images/Fab_logo.png" />
-        <h3><a href="colofed.html">College of Education</a></h3>
+        <h3>@Html.ActionLink("College of Education", "Colofed", "College")</h3>
     </div>
     <div class="box-1">
         <img src="images/Fab_logo.png" />
-        <h3><a href="coloflaw.html">College of Law</a></h3>
+        <h3>@Html.ActionLink("College of Law", "Coloflaw", "College")</h3>
     </div>
     <div class="box-1">
         <img src="images/Fab_logo.png" />
-        <h3><a href="schofmus.html">School of Music</a></h3>
+        <h3>@Html.ActionLink("School of Music", "Schofmus", "College")</h3>
     </div>
 </div>
 
