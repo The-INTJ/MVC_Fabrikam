@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BlogModelStoreContainer" CdmEntityContainer="BlogDbContext">
+    <EntitySetMapping Name="authors">
+      <EntityTypeMapping TypeName="BlogModel.author">
+        <MappingFragment StoreEntitySet="authors">
+          <ScalarProperty Name="author_id" ColumnName="author_id" />
+          <ScalarProperty Name="author_name" ColumnName="author_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="blogs">
+      <EntityTypeMapping TypeName="BlogModel.blog">
+        <MappingFragment StoreEntitySet="blogs">
+          <ScalarProperty Name="article_id" ColumnName="article_id" />
+          <ScalarProperty Name="article_title" ColumnName="article_title" />
+          <ScalarProperty Name="article_content" ColumnName="article_content" />
+          <ScalarProperty Name="article_author_id" ColumnName="article_author_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logins">
+      <EntityTypeMapping TypeName="BlogModel.login">
+        <MappingFragment StoreEntitySet="logins">
+          <ScalarProperty Name="entry_id" ColumnName="entry_id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

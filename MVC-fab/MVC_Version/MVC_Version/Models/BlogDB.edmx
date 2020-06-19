@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BlogModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="authors">
+          <Key>
+            <PropertyRef Name="author_id" />
+          </Key>
+          <Property Name="author_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="author_name" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="blogs">
+          <Key>
+            <PropertyRef Name="article_id" />
+          </Key>
+          <Property Name="article_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="article_title" Type="varchar(max)" Nullable="false" />
+          <Property Name="article_content" Type="varchar(max)" />
+          <Property Name="article_author_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="logins">
+          <Key>
+            <PropertyRef Name="entry_id" />
+          </Key>
+          <Property Name="entry_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar(max)" Nullable="false" />
+          <Property Name="password" Type="varchar(max)" />
+        </EntityType>
+        <Association Name="FK__blogs__article_a__31EC6D26">
+          <End Role="authors" Type="Self.authors" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="blogs" Type="Self.blogs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="authors">
+              <PropertyRef Name="author_id" />
+            </Principal>
+            <Dependent Role="blogs">
+              <PropertyRef Name="article_author_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BlogModelStoreContainer">
+          <EntitySet Name="authors" EntityType="Self.authors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="blogs" EntityType="Self.blogs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="logins" EntityType="Self.logins" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__blogs__article_a__31EC6D26" Association="Self.FK__blogs__article_a__31EC6D26">
+            <End Role="authors" EntitySet="authors" />
+            <End Role="blogs" EntitySet="blogs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BlogModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="author">
+          <Key>
+            <PropertyRef Name="author_id" />
+          </Key>
+          <Property Name="author_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="author_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="blogs" Relationship="Self.FK__blogs__article_a__31EC6D26" FromRole="authors" ToRole="blogs" />
+        </EntityType>
+        <EntityType Name="blog">
+          <Key>
+            <PropertyRef Name="article_id" />
+          </Key>
+          <Property Name="article_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="article_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="article_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="article_author_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="author" Relationship="Self.FK__blogs__article_a__31EC6D26" FromRole="blogs" ToRole="authors" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="entry_id" />
+          </Key>
+          <Property Name="entry_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK__blogs__article_a__31EC6D26">
+          <End Role="authors" Type="Self.author" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="blogs" Type="Self.blog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="authors">
+              <PropertyRef Name="author_id" />
+            </Principal>
+            <Dependent Role="blogs">
+              <PropertyRef Name="article_author_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BlogDbContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="authors" EntityType="Self.author" />
+          <EntitySet Name="blogs" EntityType="Self.blog" />
+          <EntitySet Name="logins" EntityType="Self.login" />
+          <AssociationSet Name="FK__blogs__article_a__31EC6D26" Association="Self.FK__blogs__article_a__31EC6D26">
+            <End Role="authors" EntitySet="authors" />
+            <End Role="blogs" EntitySet="blogs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BlogModelStoreContainer" CdmEntityContainer="BlogDbContext">
+          <EntitySetMapping Name="authors">
+            <EntityTypeMapping TypeName="BlogModel.author">
+              <MappingFragment StoreEntitySet="authors">
+                <ScalarProperty Name="author_id" ColumnName="author_id" />
+                <ScalarProperty Name="author_name" ColumnName="author_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="blogs">
+            <EntityTypeMapping TypeName="BlogModel.blog">
+              <MappingFragment StoreEntitySet="blogs">
+                <ScalarProperty Name="article_id" ColumnName="article_id" />
+                <ScalarProperty Name="article_title" ColumnName="article_title" />
+                <ScalarProperty Name="article_content" ColumnName="article_content" />
+                <ScalarProperty Name="article_author_id" ColumnName="article_author_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="logins">
+            <EntityTypeMapping TypeName="BlogModel.login">
+              <MappingFragment StoreEntitySet="logins">
+                <ScalarProperty Name="entry_id" ColumnName="entry_id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

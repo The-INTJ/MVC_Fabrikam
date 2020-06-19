@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BlogModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="author">
+    <Key>
+      <PropertyRef Name="author_id" />
+    </Key>
+    <Property Name="author_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="author_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="blogs" Relationship="Self.FK__blogs__article_a__31EC6D26" FromRole="authors" ToRole="blogs" />
+  </EntityType>
+  <EntityType Name="blog">
+    <Key>
+      <PropertyRef Name="article_id" />
+    </Key>
+    <Property Name="article_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="article_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="article_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="article_author_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="author" Relationship="Self.FK__blogs__article_a__31EC6D26" FromRole="blogs" ToRole="authors" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="entry_id" />
+    </Key>
+    <Property Name="entry_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__blogs__article_a__31EC6D26">
+    <End Role="authors" Type="Self.author" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="blogs" Type="Self.blog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="authors">
+        <PropertyRef Name="author_id" />
+      </Principal>
+      <Dependent Role="blogs">
+        <PropertyRef Name="article_author_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BlogDbContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="authors" EntityType="Self.author" />
+    <EntitySet Name="blogs" EntityType="Self.blog" />
+    <EntitySet Name="logins" EntityType="Self.login" />
+    <AssociationSet Name="FK__blogs__article_a__31EC6D26" Association="Self.FK__blogs__article_a__31EC6D26">
+      <End Role="authors" EntitySet="authors" />
+      <End Role="blogs" EntitySet="blogs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
