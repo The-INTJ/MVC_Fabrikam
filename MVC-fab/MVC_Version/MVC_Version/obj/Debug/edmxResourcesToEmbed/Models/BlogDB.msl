@@ -12,6 +12,7 @@
     <EntitySetMapping Name="blogs">
       <EntityTypeMapping TypeName="BlogModel.blog">
         <MappingFragment StoreEntitySet="blogs">
+          <ScalarProperty Name="created" ColumnName="created" />
           <ScalarProperty Name="article_id" ColumnName="article_id" />
           <ScalarProperty Name="article_title" ColumnName="article_title" />
           <ScalarProperty Name="article_content" ColumnName="article_content" />
@@ -30,5 +31,6 @@
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="getUsernames" FunctionName="BlogModel.Store.getUsernames" />
     <FunctionImportMapping FunctionImportName="getPasswords" FunctionName="BlogModel.Store.getPasswords" />
+    <FunctionImportMapping FunctionImportName="setBlog" FunctionName="BlogModel.Store.setBlog" />
   </EntityContainerMapping>
 </Mapping>

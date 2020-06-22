@@ -40,5 +40,18 @@ namespace MVC_Version.Models
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("getPasswords");
         }
+    
+        public virtual int setBlog(string articleName, string articleContent)
+        {
+            var articleNameParameter = articleName != null ?
+                new ObjectParameter("articleName", articleName) :
+                new ObjectParameter("articleName", typeof(string));
+    
+            var articleContentParameter = articleContent != null ?
+                new ObjectParameter("articleContent", articleContent) :
+                new ObjectParameter("articleContent", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("setBlog", articleNameParameter, articleContentParameter);
+        }
     }
 }

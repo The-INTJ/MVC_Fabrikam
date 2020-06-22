@@ -15,6 +15,7 @@
     <Property Name="article_title" Type="varchar(max)" Nullable="false" />
     <Property Name="article_content" Type="varchar(max)" />
     <Property Name="article_author_id" Type="int" Nullable="false" />
+    <Property Name="created" Type="datetime" />
   </EntityType>
   <EntityType Name="logins">
     <Key>
@@ -40,6 +41,10 @@
   </Association>
   <Function Name="getPasswords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="getUsernames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="setBlog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="articleName" Type="varchar(max)" Mode="In" />
+    <Parameter Name="articleContent" Type="varchar(max)" Mode="In" />
+  </Function>
   <EntityContainer Name="BlogModelStoreContainer">
     <EntitySet Name="authors" EntityType="Self.authors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="blogs" EntityType="Self.blogs" Schema="dbo" store:Type="Tables" />

@@ -1,0 +1,32 @@
+﻿@using System.Web.UI.WebControls
+@model MVC_Version.Models.Data
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="title">
+    <h2><strong>Add Blog</strong></h2>
+</div>
+
+
+<div class="content">
+    <div class="not-blog">
+        @Html.TextBoxFor(m => m.Title, new { @class = "un", @type = "text", @align = "center", @placeholder = "Title" })
+        @Html.TextBoxFor(m => m.Author, new { @class = "un", @type = "text", @align = "center", @placeholder = "Author" })
+        @Html.TextBoxFor(m => m.Created, new { @class = "un", @type = "text", @align = "center", @placeholder = "Date Created" })
+    </div>
+    <div class="blog">
+        @Html.TextAreaFor(m => m.Content, new {cols = 30, @rows = 10, @class = "un", @placeholder = "Blog Content"})
+    </div>
+</div>
+
+@Html.ActionLink("Create", "BlogCreate", "Blog", Model, new {@class="btn-prft"})
+
+
+
+@section Styles {
+    <link href="@Url.Content("~/Content/AdminStyle.css")" rel="stylesheet" type="text/css" />
+}

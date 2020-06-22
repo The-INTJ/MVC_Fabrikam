@@ -17,6 +17,7 @@
     <Property Name="article_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="article_author_id" Type="Int32" Nullable="false" />
     <NavigationProperty Name="author" Relationship="Self.FK__blogs__article_a__31EC6D26" FromRole="blogs" ToRole="authors" />
+    <Property Name="created" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="login">
     <Key>
@@ -50,5 +51,9 @@
     </AssociationSet>
     <FunctionImport Name="getUsernames" ReturnType="Collection(String)" />
     <FunctionImport Name="getPasswords" ReturnType="Collection(String)" />
+    <FunctionImport Name="setBlog">
+      <Parameter Name="articleName" Mode="In" Type="String" />
+      <Parameter Name="articleContent" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
 </Schema>

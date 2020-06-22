@@ -8,8 +8,8 @@ var slider = $("#jquery-slideshow");
 var item_width = slider.parent().outerWidth();
 
 $("#radioButtons >> input").on("click", function () {
-    clearTimeout(timeoutInterval);
-    clearInterval(intervalAR); // Stop the current autoRotate
+    //clearTimeout(timeoutInterval);
+    //clearInterval(intervalAR); // Stop the current autoRotate
     curImg = nextImg; // next image will change, making it the next current
     nextImg = $("#radioButtons >> input[name=place]:checked").val(); // grabbing the value of clicked radio button
     console.log(nextImg);
@@ -20,9 +20,9 @@ $("#radioButtons >> input").on("click", function () {
     }
 
     // call the autorotate after 2 seconds, setting the interval for 3 -- 5 seconds of stop
-    timeoutInterval = (
-        (intervalAR = setInterval(autoRotate, 3000)),
-        2000);
+    //timeoutInterval = (
+    //    (intervalAR = setInterval(autoRotate, 3000)),
+    //    2000);
 
 });
 

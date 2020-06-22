@@ -1,0 +1,90 @@
+﻿.body {
+    background-color: black;
+}
+
+.title {
+    border-radius: 25px;
+    background: linear-gradient(to right, #8b0000, black);
+    min-height: 43px;
+    margin: 20px;
+}
+
+    .title h2 {
+        margin: 20px 50px;
+        font-family: 'Ubuntu', sans-serif;
+        color: gray;
+    }
+
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    min-height: 150px;
+}
+
+.not-blog {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.not-blog input {
+    border-radius: 10px;
+    margin: 5px;
+}
+
+
+.blog {
+    padding: 10px;
+    flex-grow: 2;
+}
+
+.blog textarea {
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.un {
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: darkgray;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid black;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+    .un:focus {
+        box-shadow: 0 3px darkgoldenrod;
+    }
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.btn-prft {
+    border-radius: 10px;
+    color: white;
+    border: 1px solid darkgoldenrod;
+    background: -webkit-linear-gradient(top, black, #8b0000);
+    padding: 2px;
+}
+
+    .btn-prft:hover {
+        border: 3px solid darkgoldenrod;
+        padding: 0;
+    }

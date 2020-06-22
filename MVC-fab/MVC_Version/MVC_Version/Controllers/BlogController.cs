@@ -16,6 +16,20 @@ namespace MVC_Version.Controllers
             return View();
         }
 
+        public ActionResult Admin()
+        {
+            return View();
+        }
+
+        public ActionResult BlogCreate(Data data)
+        {
+            var dbContext = new BlogDbContext();
+
+            dbContext.setBlog(data.Title, data.Content);
+
+            return Blog();
+        }
+
 
         public ActionResult Login(Data data)
         {
@@ -32,7 +46,7 @@ namespace MVC_Version.Controllers
             Debug.WriteLine("Username: " + data.Username + " Password: " + data.Password);
             if (usernames.Contains(data.Username) && passwords.Contains(data.Password))
             {
-                return View("Blog");
+                return View("Admin");
             }
             else
             {

@@ -18,6 +18,7 @@ namespace MVC_Version.Models
         public string article_title { get; set; }
         public string article_content { get; set; }
         public int article_author_id { get; set; }
+        public Nullable<System.DateTime> created { get; set; }
     
         public virtual author author { get; set; }
     }

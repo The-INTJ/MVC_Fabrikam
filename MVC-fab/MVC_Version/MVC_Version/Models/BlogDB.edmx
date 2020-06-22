@@ -20,6 +20,7 @@
           <Property Name="article_title" Type="varchar(max)" Nullable="false" />
           <Property Name="article_content" Type="varchar(max)" />
           <Property Name="article_author_id" Type="int" Nullable="false" />
+          <Property Name="created" Type="datetime" />
         </EntityType>
         <EntityType Name="logins">
           <Key>
@@ -45,6 +46,10 @@
         </Association>
         <Function Name="getPasswords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="getUsernames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="setBlog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="articleName" Type="varchar(max)" Mode="In" />
+          <Parameter Name="articleContent" Type="varchar(max)" Mode="In" />
+        </Function>
         <EntityContainer Name="BlogModelStoreContainer">
           <EntitySet Name="authors" EntityType="Self.authors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="blogs" EntityType="Self.blogs" Schema="dbo" store:Type="Tables" />
@@ -75,6 +80,7 @@
           <Property Name="article_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="article_author_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="author" Relationship="Self.FK__blogs__article_a__31EC6D26" FromRole="blogs" ToRole="authors" />
+          <Property Name="created" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="login">
           <Key>
@@ -108,6 +114,10 @@
           </AssociationSet>
           <FunctionImport Name="getUsernames" ReturnType="Collection(String)" />
           <FunctionImport Name="getPasswords" ReturnType="Collection(String)" />
+          <FunctionImport Name="setBlog">
+            <Parameter Name="articleName" Mode="In" Type="String" />
+            <Parameter Name="articleContent" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -126,6 +136,7 @@
           <EntitySetMapping Name="blogs">
             <EntityTypeMapping TypeName="BlogModel.blog">
               <MappingFragment StoreEntitySet="blogs">
+                <ScalarProperty Name="created" ColumnName="created" />
                 <ScalarProperty Name="article_id" ColumnName="article_id" />
                 <ScalarProperty Name="article_title" ColumnName="article_title" />
                 <ScalarProperty Name="article_content" ColumnName="article_content" />
@@ -144,6 +155,7 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="getUsernames" FunctionName="BlogModel.Store.getUsernames" />
           <FunctionImportMapping FunctionImportName="getPasswords" FunctionName="BlogModel.Store.getPasswords" />
+          <FunctionImportMapping FunctionImportName="setBlog" FunctionName="BlogModel.Store.setBlog" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
