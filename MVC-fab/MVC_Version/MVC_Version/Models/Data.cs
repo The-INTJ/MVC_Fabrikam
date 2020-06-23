@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Web;
 
 namespace MVC_Version.Models
@@ -14,7 +15,7 @@ namespace MVC_Version.Models
 
         public string Author { get; set; }
 
-        public string Created { get; set; }
+        public DateTime Created { get; set; }
 
         public string Title { get; set; }
 

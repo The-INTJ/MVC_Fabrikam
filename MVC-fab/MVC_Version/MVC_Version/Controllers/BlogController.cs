@@ -11,9 +11,18 @@ namespace MVC_Version.Controllers
     public class BlogController : Controller
     {
         // GET: Blog
-        public ActionResult Blog()
+        public ActionResult Blog(Data data)
         {
-            return View();
+            if (data.Title is null)
+            {
+                var dbContext = new BlogDbContext();
+
+                var mostRecentBlog = dbContext.getRecentBlogAndInfo().ToList();
+                
+            }
+            
+
+            return View(data);
         }
 
         public ActionResult Admin()
@@ -21,13 +30,30 @@ namespace MVC_Version.Controllers
             return View();
         }
 
-        public ActionResult BlogCreate(Data data)
+        public ActionResult CreateBlog(Data data)
         {
             var dbContext = new BlogDbContext();
+            // Detect if new author, set id if not
+            var authorId = 0;
+            bool createNewAuthor = !(dbContext.getAuthorName(data.Author).ToList().Contains(data.Author));
+            Console.WriteLine(data.Author);
+            if (createNewAuthor)
+            {
+                dbContext.setAuthor(data.Author);
+            }
 
-            dbContext.setBlog(data.Title, data.Content);
+            try
+            {
+                authorId = (int) dbContext.getAuthorId(data.Author).ToList()[0];
+            }
+            catch (SystemException e)
+            {
+                authorId = 1;
+            }
 
-            return Blog();
+            dbContext.setBlog(data.Title, data.Content, authorId, data.Created);
+
+            return View("Blog", data);
         }
 
 

@@ -1,0 +1,140 @@
+﻿body {
+    background-color: lightgray;
+}
+
+#classes {
+    display: flex;
+    flex-direction: row;
+    background-color: darkgray;
+    min-height: 100%;
+    text-align: center;
+    color: #000000;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 15px;
+}
+
+.container-1 {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 3px;
+}
+
+.btn-prft {
+    min-width: 85px;
+    border-radius: 5px;
+    color: darkgray;
+    border: 1px solid darkgoldenrod;
+    background: -webkit-linear-gradient(top, #ab4141, darkred);
+    padding: 2px;
+}
+    .btn-prft:hover {
+        border: 3px solid darkgoldenrod;
+        padding: 0;
+    }
+
+.imgrot {
+    display: flex;
+    flex-direction: column;
+    margin: 3px;
+}
+
+#radioButtons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.container-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: auto;
+}
+
+.box-1 {
+    flex-grow: 1;
+    margin: 3px;
+}
+
+#golden {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 3px;
+    border-radius: 2px;
+    width: 100%;
+    border-top: 1px solid darkgoldenrod;
+}
+
+.container-3 {
+    margin: 5px;
+    padding: 5px;
+}
+
+.box-2 {
+    flex-grow: 1;
+    margin: 3px;
+}
+
+aside#sidebar {
+    float: right;
+    width: 30%;
+    margin-top: 10px;
+}
+
+/*--------SLIDER CSS----------*/
+#jquery-slideshow-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    min-width: 200px;
+    height: 300px;
+}
+
+#jquery-slideshow-container #jquery-slideshow {
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    margin: 0;
+    height: 100%;
+}
+
+#jquery-slideshow-container #jquery-slideshow li {
+/*    display: inline;*/
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+span {
+    color: darkred;
+}
+    span:hover {
+        text-decoration: none;
+        font-weight: bold;
+    }
+a {
+    text-decoration: none;
+    color: darkred;
+}
+    a:hover {
+        text-decoration: none;
+        font-weight: bold;
+        color: darkred;
+    }
+    a:active {
+            text-decoration: none;
+        }
+
+@media (max-width: 800px) {
+    #classes {
+        display: flex;
+        flex-direction: column;
+    }
+}

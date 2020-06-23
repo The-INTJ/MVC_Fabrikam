@@ -1,5 +1,4 @@
-﻿@using System.Web.UI.WebControls
-@model MVC_Version.Models.Data
+﻿@model MVC_Version.Models.Data
 @{
     ViewBag.Title = "Admin";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,7 +10,7 @@
     <h2><strong>Add Blog</strong></h2>
 </div>
 
-
+@using (Html.BeginForm("CreateBlog", "Blog", FormMethod.Post)) {
 <div class="content">
     <div class="not-blog">
         @Html.TextBoxFor(m => m.Title, new { @class = "un", @type = "text", @align = "center", @placeholder = "Title" })
@@ -23,9 +22,9 @@
     </div>
 </div>
 
-@Html.ActionLink("Create", "BlogCreate", "Blog", Model, new {@class="btn-prft"})
+<input class="btn-prft" type="submit"/>
 
-
+}
 
 @section Styles {
     <link href="@Url.Content("~/Content/AdminStyle.css")" rel="stylesheet" type="text/css" />
