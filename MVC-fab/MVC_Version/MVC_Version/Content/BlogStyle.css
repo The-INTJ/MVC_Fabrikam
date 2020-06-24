@@ -24,6 +24,7 @@
 .content {
     flex-grow: 3;
     flex-direction: row;
+    word-break: break-all;
 }
 
 .separator {
@@ -39,6 +40,11 @@
     flex-grow: 1;
     max-width: 300px;
     margin: 5px;
+    word-wrap: break-word;
+}
+
+.stronk {
+    font-weight: bold;
 }
 
 h2 {

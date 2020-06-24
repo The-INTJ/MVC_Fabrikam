@@ -8,14 +8,15 @@
 <h2>Blogs</h2>
 @if (Model.IsNew)
 {
-    <h3>Posted Successfully</h3>
     <div class="post">
         <div class="details">
-            <p>Title: @Model.Title</p>
-            <p>Author: @Model.Author</p>
-            <p>Date: @Model.Created</p>
+            <p><em>Title</em></p>
+            <p class="stronk">@Model.Title</p>
+            <p><em>Author</em></p>
+            <p class="stronk">@Model.Author</p>
+            <p>Date: <em>@Model.Created</em></p>
         </div>
-        <input class="btn-prft-vertical"><input/>
+        <div class="separator"><input class="btn-prft-vertical" /></div>
         <div class="content">
             <p>
                 @Model.Content
@@ -29,9 +30,11 @@ else
     {
         <div class="post">
             <div class="details">
-                <p>Title: @blog.article_title</p>
-                <p>Author: @blog.author.author_name</p>
-                <p>Date: @blog.created</p>
+                <p><em>Title</em></p>
+                <p class="stronk">@blog.article_title</p>
+                <p><em>Author</em></p>
+                <p class="stronk">@blog.author.author_name</p>
+                <p>Date: <em>@blog.created</em></p>
             </div>
             <div class="separator"><input class="btn-prft-vertical" /></div>
             <div class="content">

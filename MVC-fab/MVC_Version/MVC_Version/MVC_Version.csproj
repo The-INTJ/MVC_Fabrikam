@@ -210,6 +210,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\artcol.jpg" />
+    <Content Include="images\college.jpg" />
+    <Content Include="images\ColMus.jpg" />
+    <Content Include="images\computer.jpg" />
     <Content Include="images\Fab_logo.png" />
     <Content Include="images\FU_image.png" />
     <Content Include="images\picture.png" />

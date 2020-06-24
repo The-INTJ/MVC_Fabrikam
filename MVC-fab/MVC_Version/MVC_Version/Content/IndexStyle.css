@@ -19,6 +19,7 @@
     display: flex;
     flex-direction: column;
     margin: 3px;
+    padding-right: 5px;
 }
 
 .btn-prft {
@@ -38,6 +39,8 @@
     display: flex;
     flex-direction: column;
     margin: 3px;
+    border-right: 3px solid darkred;
+    border-left: 3px solid darkred;
 }
 
 #radioButtons {
@@ -75,6 +78,32 @@
 .box-2 {
     flex-grow: 1;
     margin: 3px;
+}
+
+.college {
+    min-width: 300px;
+    min-height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%
+}
+
+    .college h3 {
+        text-shadow: 3px 3px 15px white, -3px 3px 15px white;
+        text-align: center;
+    }
+
+#img1 {
+    background-image: url('../images/computer.jpg');
+}
+#img2 {
+    background-image: url('../images/college.jpg');
+}
+#img3 {
+    background-image: url('../images/ColMus.jpg');
+}
+#img4 {
+    background-image: url('../images/artcol.jpg');
 }
 
 aside#sidebar {
