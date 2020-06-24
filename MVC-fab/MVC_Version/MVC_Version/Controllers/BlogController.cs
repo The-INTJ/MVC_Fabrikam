@@ -49,7 +49,7 @@ namespace MVC_Version.Controllers
             }
 
             dbContext.setBlog(data.Title, data.Content, authorId, data.Created);
-
+            data.IsNew = true;
             return View("Blog", data);
         }
 

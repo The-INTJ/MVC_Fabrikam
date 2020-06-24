@@ -1,25 +1,47 @@
-﻿@model MVC_Version.Models.Data
+﻿@using MVC_Version.Models
+@model MVC_Version.Models.Data
 @{
     ViewBag.Title = "Blog";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Blog</h2>
-
-
-<div class="post">
-    <div class="details">
-        <p>Title: @Model.Title</p>
-        <p>Author: @Model.Author</p>
-        <p>Date: @Model.Created</p>
+<h2>Blogs</h2>
+@if (Model.IsNew)
+{
+    <h3>Posted Successfully</h3>
+    <div class="post">
+        <div class="details">
+            <p>Title: @Model.Title</p>
+            <p>Author: @Model.Author</p>
+            <p>Date: @Model.Created</p>
+        </div>
+        <input class="btn-prft-vertical"><input/>
+        <div class="content">
+            <p>
+                @Model.Content
+            </p>
+        </div>
     </div>
-    <div class="content">
-        <p>
-            @Model.Content
-        </p>
-    </div>
-</div>
-
+}
+else
+{
+    foreach (var blog in @Model.Blogs)
+    {
+        <div class="post">
+            <div class="details">
+                <p>Title: @blog.article_title</p>
+                <p>Author: @blog.author.author_name</p>
+                <p>Date: @blog.created</p>
+            </div>
+            <div class="separator"><input class="btn-prft-vertical" /></div>
+            <div class="content">
+                <p>
+                    @blog.article_content
+                </p>
+            </div>
+        </div>
+    }
+}
 
 @*@section scripts {
         @Scripts.Render("~/bundles/custom")

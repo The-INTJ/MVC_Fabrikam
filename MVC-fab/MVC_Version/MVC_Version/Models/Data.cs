@@ -21,6 +21,8 @@ namespace MVC_Version.Models
 
         public string Content { get; set; }
 
+        public bool IsNew { get; set; }
+
         public List<Models.blog> Blogs { get; set; }
 
         public void SetList()
