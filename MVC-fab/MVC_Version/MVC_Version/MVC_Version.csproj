@@ -236,8 +236,8 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\custom\BlogMaker.jsx" />
     <Content Include="Scripts\custom\JavaScript.js" />
+    <Content Include="Scripts\custom\BlogMaker.js" />
     <Content Include="Scripts\custom\rotate2.js" />
     <Content Include="Scripts\custom\rotate3.js" />
     <Content Include="Scripts\esm\popper-utils.js" />

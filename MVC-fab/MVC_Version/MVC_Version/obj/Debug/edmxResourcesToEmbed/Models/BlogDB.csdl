@@ -60,7 +60,7 @@
     <FunctionImport Name="getAuthor" ReturnType="Collection(Int32)">
       <Parameter Name="authorName" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="getRecentBlogAndInfo" ReturnType="Collection(BlogModel.getRecentBlogAndInfo_Result)" />
+    <FunctionImport Name="getRecentBlogAndInfo" EntitySet="blogs" ReturnType="Collection(BlogModel.blog)" />
     <FunctionImport Name="setAuthor">
       <Parameter Name="authorName" Mode="In" Type="String" />
     </FunctionImport>

@@ -32,19 +32,7 @@
     <FunctionImportMapping FunctionImportName="getUsernames" FunctionName="BlogModel.Store.getUsernames" />
     <FunctionImportMapping FunctionImportName="getPasswords" FunctionName="BlogModel.Store.getPasswords" />
     <FunctionImportMapping FunctionImportName="setBlog" FunctionName="BlogModel.Store.setBlog" />
-    <FunctionImportMapping FunctionImportName="getRecentBlogAndInfo" FunctionName="BlogModel.Store.getRecentBlogAndInfo">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="BlogModel.getRecentBlogAndInfo_Result">
-          <ScalarProperty Name="article_id" ColumnName="article_id" />
-          <ScalarProperty Name="article_title" ColumnName="article_title" />
-          <ScalarProperty Name="article_content" ColumnName="article_content" />
-          <ScalarProperty Name="article_author_id" ColumnName="article_author_id" />
-          <ScalarProperty Name="created" ColumnName="created" />
-          <ScalarProperty Name="author_id" ColumnName="author_id" />
-          <ScalarProperty Name="author_name" ColumnName="author_name" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getRecentBlogAndInfo" FunctionName="BlogModel.Store.getRecentBlogAndInfo" />
     <FunctionImportMapping FunctionImportName="setAuthor" FunctionName="BlogModel.Store.setAuthor" />
     <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="BlogModel.Store.sp_alterdiagram" />
     <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="BlogModel.Store.sp_creatediagram" />

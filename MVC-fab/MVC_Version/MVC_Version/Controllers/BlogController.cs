@@ -15,12 +15,9 @@ namespace MVC_Version.Controllers
         {
             if (data.Title is null)
             {
-                var dbContext = new BlogDbContext();
-
-                var mostRecentBlog = dbContext.getRecentBlogAndInfo().ToList();
-                
+                data.SetList();
             }
-            
+
 
             return View(data);
         }

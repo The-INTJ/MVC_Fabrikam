@@ -21,6 +21,19 @@ namespace MVC_Version.Models
 
         public string Content { get; set; }
 
+        public List<Models.blog> Blogs { get; set; }
 
+        public void SetList()
+        {
+            Blogs = new List<Models.blog>();
+            var blogsInDatabase = new BlogDbContext().getRecentBlogAndInfo().ToList();
+
+            foreach (Models.blog blog in blogsInDatabase)
+            {
+                Blogs.Add(blog);
+            }
+
+
+        }
     }
 }

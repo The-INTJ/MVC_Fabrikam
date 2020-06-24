@@ -71,9 +71,14 @@ namespace MVC_Version.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("getAuthor", authorNameParameter);
         }
     
-        public virtual ObjectResult<getRecentBlogAndInfo_Result> getRecentBlogAndInfo()
+        public virtual ObjectResult<blog> getRecentBlogAndInfo()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getRecentBlogAndInfo_Result>("getRecentBlogAndInfo");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<blog>("getRecentBlogAndInfo");
+        }
+    
+        public virtual ObjectResult<blog> getRecentBlogAndInfo(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<blog>("getRecentBlogAndInfo", mergeOption);
         }
     
         public virtual int setAuthor(string authorName)
